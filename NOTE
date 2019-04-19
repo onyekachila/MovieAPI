@@ -1,0 +1,57 @@
+We can install syntax highlighting by liujim and vetur extension.
+
+Exploring the folder structure.
+In src folder we have a main.js file. This is the entry point of the application
+It is pretty much like we we have seen the previous lessons with a slight difference
+
+Next we check the App.vue file. In this file we can do what we have been doing in the early videos. e.g.
+to create a data and properties inside it we do it slightly different see sample below
+
+data() {
+    return {
+        hello: "Hello from the other side"
+    }
+}
+
+i.e. this now works like a function.
+In this file we also have a component which we will look into later called HelloWorld being imported
+from components. Looking at this file we see that it comprises of some style and html with js.
+We also export it for use by other files by adding the export to it.\
+
+Adding scoped to our style means we want to say add only this style to this template alone.
+
+Creating and Using components. A component is a piece of code that you can reuse. It can be in form of a page or layout or container
+etc. 
+
+Creating our first component we go to the components folder and create Header.vue
+import it iun app.vue and reference it in the component as well as use a directive which we can do in two ways
+<header></header> or <Header />
+
+Props: This refers to how one components talks to another component and how you can pass along data from one to the other.
+
+Checking our App.vue file we can see msg in the HelloWorld component with welcome to your vue js app.
+We can replicate this by creating a props in the Header components with title of type string then add {{title}}
+to the h1 tag. We can also declare the title as a property in our data(). To use it in the html we have to use 
+v-bind:title="title" this can also be rewritten like this :title="title"
+
+Looping in views (iterations)
+we use the v-for for looping through a collection. To get the index we wrap the item in bracket and then
+pass in a second parameter index
+
+MADE A PART two
+
+Computed Properties - This refers to the modification of data in our application before it is displayed.
+
+We start developing the application here. First of I will remove the helloworld component as well as 
+
+the first api url we called to retuyrn everything in the vue cosole is
+
+"https://api.themoviedb.org/3/movie/550?api_key=6fe4e2cd9edc107dd7d61509d3d05de3"
+
+"https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6fe4e2cd9edc107dd7d61509d3d05de3"
+
+
+
+
+
+
