@@ -1,34 +1,49 @@
 <template>
-  <div>{{movie.id}}</div>
+  <ul>
+    <li v-for="movie in movies">
+      <Movie :movie="movie"/>
+    </li>
+  </ul>
 </template>
 
 <script>
+import Movie from "./Movie.vue";
 export default {
   name: "MoviesList",
   data() {
     return {
-      movie: {}
+      movies: []
     };
   },
   created: function() {
-    this.fectchData();
+    this.fetchData();
   },
   methods: {
-    fectchData: async function() {
+    fetchData: async function() {
       try {
         const res = await fetch(
-          "https://api.themoviedb.org/3/movie/550?api_key=6fe4e2cd9edc107dd7d61509d3d05de3"
+          "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=65e043c24785898be00b4abc12fcdaae"
         );
-        const movie = await res.json();
-        this.movie = movie;
+        const movies = await res.json();
+        this.movies = movies.results;
       } catch (e) {
         console.log(e);
       }
     }
+  },
+  components: {
+    Movie
   }
 };
 </script>
 
-
 <style scoped>
+ul {
+  display: grid;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  grid-row-gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+}
 </style>
