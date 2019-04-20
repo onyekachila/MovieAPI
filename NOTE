@@ -50,6 +50,12 @@ the first api url we called to retuyrn everything in the vue cosole is
 
 "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6fe4e2cd9edc107dd7d61509d3d05de3"
 
+To install the vue router we use
+
+npm install --save vue-router
+
+
+
 
 
 

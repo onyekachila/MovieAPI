@@ -1,15 +1,15 @@
 <template>
   <ul>
     <li v-for="movie in movies">
-      <Movie :movie="movie"/>
+      <Movie :movie="movie" />
     </li>
   </ul>
 </template>
 
 <script>
-import Movie from "./Movie.vue";
+import Movie from './Movie.vue';
 export default {
-  name: "MoviesList",
+  name: 'MoviesList',
   data() {
     return {
       movies: []
@@ -22,7 +22,7 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=65e043c24785898be00b4abc12fcdaae"
+          'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=65e043c24785898be00b4abc12fcdaae'
         );
         const movies = await res.json();
         this.movies = movies.results;

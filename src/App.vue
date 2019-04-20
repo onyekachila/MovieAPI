@@ -1,38 +1,32 @@
 <template>
   <div id="app">
-    <Header :title="title"/>
-
-    <MoviesList/>
+    <Header :title="title" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import MoviesList from "./components/MoviesList.vue";
+import Header from './components/Header.vue';
 
 export default {
-  name: "app",
+  name: 'app',
   data() {
     return {
-      hello: "Hello From Data",
-      title: "Vue Movie DB",
-      isTrue: false
+      title: 'Vue Movie DB'
     };
   },
   components: {
-    Header,
-    MoviesList
+    Header
   }
 };
 </script>
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fff;
 }
 </style>
-
